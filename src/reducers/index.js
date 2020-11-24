@@ -1,7 +1,7 @@
 //Reducers
 
 //List of songs
-export const songsReducer = () => {
+const songsReducer = () => {
   return [
     {
       title: "There, There",
@@ -29,4 +29,12 @@ export const songsReducer = () => {
       duration: "4:45",
     },
   ];
+};
+
+// User selected song
+const selectedSongReducer = (selectedSong = null, action) => {
+  if (type === "SONG_SELECTED") {
+    return action.payload;
+  }
+  return selectedSong;
 };
